@@ -1,25 +1,25 @@
-public static void main(String[] args) {
-	String[] foodTypes = getFoodTypes();
-	String myType = foodTypes[2];
+public static void main(String[] args) {     	// main method
+	String[] foodTypes = getFoodTypes();	// cteating an object
+	String myType = foodTypes[2];		// assign the object size 2
 
-	String[] foodsOfMyType = getFoodsByType(myType);
+	String[] foodsOfMyType = getFoodsByType(myType);   // calling the method from other classes
 	
-	for (String food : foodsOfMyType) {
-		System.out.println(food);
+	for (String food : foodsOfMyType) {	// for each loop data type compare with an array
+		System.out.println(food);	// print out the list of the items
 	}
 }
 
-public static String[] getFoodTypes() {
-	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"};
+public static String[] getFoodTypes() {          // static method to get food types
+	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"}; // assigning specific value for the objects
 	return foodTypes;
 }
 
-public static String[] getFoodsByType(String type) {
-	String[] foods = new String[3];
+public static String[] getFoodsByType(String type) {   
+	String[] foods = new String[3];		// just assigning the size of an object size(3)
 
 	switch(type) {
-	case "breakfast":
-		foods[0] = "pancakes";
+	case "breakfast":			// for each food it has their own index
+		foods[0] = "pancakes";		// for checking the value of one variable
 		foods[1] = "cereal";
 		foods[2] = "omelette";
 		break;
@@ -48,5 +48,5 @@ public static String[] getFoodsByType(String type) {
 		break;
 	}
 
-	return foods;
+	return foods;				// returning value
 }

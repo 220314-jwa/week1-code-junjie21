@@ -2,23 +2,24 @@ public class Food {
 	public String name;
 	public String type;
 
-	public Food(String name, String type) {
+	public Food(String name, String type) {		// Create a class constructor for the Food class
 		this.name = name;
 		this.type = type;
 	}
 
 	public void cook() {
-		if (!name.contains("cooked")) {
-			name = "cooked " + name;
+		if (!name.contains("cooked")) {    	// if statement if match the condition then run
+			name = "cooked " + name;	// print out vaule for name 
 		}
 	}
 }
 
 public class Main {
 	public static void main(String[] args) {
-		Food myFood = new Food("potato", "vegetable");
-		myFood.cook();
+		Food myFood = new Food("potato", "vegetable"); // creating an object of class
+		myFood.cook();  // calling the  constructor
 
-		System.out.println(myFood.name);
+		System.out.println(myFood.name); // Print the value of name
 	}
-}# practical
+}
+day3

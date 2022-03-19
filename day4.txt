@@ -1,12 +1,12 @@
 public class Main {
 	public static void main(String[] args) {
-		Javalin app = Javalin.create();
+		Javalin app = Javalin.create();			// return to the object that are created
 
-		app.start();
+		app.start();					// to start up the server send request 
 
-		app.get("foods", ctx -> {
-			Food myFood = new Food("carrots", "vegetable");
-			ctx.result("You got: " + myFood.name);
+		app.get("foods", ctx -> {	// respond to a "GET" with foods ends in URI
+			Food myFood = new Food("carrots", "vegetable");  // create and object
+			ctx.result("You got: " + myFood.name);	//Print out the value for name
 		});
 	}
 }

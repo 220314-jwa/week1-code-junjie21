@@ -2,24 +2,24 @@
 	<head>
 		<title>Daily Code Review</title>
 	</head>
-	<body>
+	<body>		// the body is anything that shows up on the page
 		<h1>Cook your food!</h1>
-		<form action="http://localhost:8080/cook">
-			<label for="foodName">Food Name:</label>
-			<input id="foodName" name="foodName" type="text">
-			<br>
-			<button type="submit">Submit</button>
+		<form action="http://localhost:8080/cook">  // defalut localhost ends with cook URI
+			<label for="foodName">Food Name:</label>	// name of the label
+			<input id="foodName" name="foodName" type="text"> // input the value for food
+			<br>					// break line to start wiht a new line
+			<button type="submit">Submit</button>	// defalut "submit" button
 		</form>
 	</body>
 </html>
 
-public static void main(String[] args) {
-	Javalin app = Javalin.create();
-	app.start();
+public static void main(String[] args) {	// java code main method
+	Javalin app = Javalin.create();		// return to the object
+	app.start();				// start up the server
 
-	app.get("cook", ctx -> {
+	app.get("cook", ctx -> {		// respond to a "GET" with foods ends in URI
 		String foodSent = ctx.formParam("foodName");
 		String cookedFood = "cooked " + foodSent;
-		ctx.result("Here's your food! <br>" + cookedFood);
+		ctx.result("Here's your food! <br>" + cookedFood);   // print out the value fop cookedFood
 	});
 }
